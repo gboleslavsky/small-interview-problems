@@ -32,9 +32,10 @@ object TriangleTypeChecker {
   def checkTrianglesType(side1: Int, side2: Int, side3: Int): TriangleType = {
     // Int makes the logic easy to understand, otherwise floating point precision has to be taken care of when comparing
 
-    val triangle = List(side1, side2, side3).sorted //sorting to make checking invariants easy
+    val triangle = List(side1, side2, side3)
 
-    def validTriangle(sortedMaybeTriangle: List[Int]): Boolean = {
+    def validTriangle(maybeTriangle: List[Int]): Boolean = {
+      val sortedMaybeTriangle = maybeTriangle.sorted
       //check that all sides have length > 0 and that the longest side is shorter than the sum of the other two
       sortedMaybeTriangle.sum > 2 && sortedMaybeTriangle(2) < sortedMaybeTriangle(0) + sortedMaybeTriangle(1) //list indices work because of the sort
     }
