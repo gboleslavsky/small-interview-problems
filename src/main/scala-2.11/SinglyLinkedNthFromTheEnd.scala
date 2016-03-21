@@ -23,9 +23,9 @@ object SinglyLinkedNthFromTheEnd{
       else
         Element(items.head, apply(items.tail: _*))
 
-    def tail[T](l: SinglyLinkedList[T]) = l.asInstanceOf[Element[T]].tail
+    def next[T](l: SinglyLinkedList[T]) = l.asInstanceOf[Element[T]].tail
 
-    def head[T](l: SinglyLinkedList[T]) = l.asInstanceOf[Element[T]].head
+    def value[T](l: SinglyLinkedList[T]) = l.asInstanceOf[Element[T]].head
 
     def nthFromTheEnd[T](l: SinglyLinkedList[T], n: Int): Option[T] = {
 
@@ -37,17 +37,16 @@ object SinglyLinkedNthFromTheEnd{
       for (i <- 1 to n ) {
         //check for the case of n > length of the list
         if (l1 == Nil) return None
-        l1 = tail(l1)
+        l1 = next(l1)
       }
 
       //now that l2 is exactly n elements behind l1,
       //move l2 in lockstep with l1 until l1 hits the end
-      //which makes l2 point to nth element from the end
-      while (tail(l1) != Nil) {
-        l1 = tail(l1)
-        l2 = tail(l2)
+      while (next(l1) != Nil) {
+        l1 = next(l1)
+        l2 = next(l2)
       }
-      Some(head(l2))
+      Some(value(l2))  //which makes l2 point to nth element from the end
     }
 
   }
