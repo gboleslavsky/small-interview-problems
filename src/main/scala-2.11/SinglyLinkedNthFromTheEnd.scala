@@ -4,7 +4,7 @@
 
 object SinglyLinkedNthFromTheEnd{
 
-  /*  I use the traditional imperative two pointer solution, translated to Scala.
+  /*  Imperative two pointer solution, translated to Scala.
       Recursive solution is simpler, but will overflow the stack for long lists. Using ScalaZ trampolined
       FoldLeft eliminates the overflow risk, but the code is not as simple for anyone not used to ScalaZ.
    */
@@ -18,6 +18,7 @@ object SinglyLinkedNthFromTheEnd{
   object SinglyLinkedList {
 
     def apply[T](items: T*): SinglyLinkedList[T] =
+    //can overflow the stack
       if (items.isEmpty)
         Nil
       else
