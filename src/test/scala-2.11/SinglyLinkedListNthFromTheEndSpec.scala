@@ -3,6 +3,13 @@ import SinglyLinkedNthFromTheEnd.SinglyLinkedList._
 import org.scalatest._
 
 class SinglyLinkedListNthFromTheEndSpec extends FlatSpec {
+
+
+  "fifthElementFromTheEnd" should "find the 5-th element from the end of a singly-linked list" in {
+    assert(fifthElementFromTheEnd(SinglyLinkedList(1, 2, 3, 4, 5, 6, 7, 8, 9)).getOrElse(null)
+                                                                       === 5)
+  }
+
   "nthFromTheEnd" should "find the n-th element from the end of a singly-linked list" in {
     assert(nthFromTheEnd(SinglyLinkedList(1, 2, 3, 4, 5, 6, 7, 8, 9), n = 0).getOrElse(null)
                                                                       === 9)

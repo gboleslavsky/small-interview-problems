@@ -49,5 +49,7 @@ object SinglyLinkedNthFromTheEnd{
       Some(value(l2))  //which makes l2 point to nth element from the end
     }
 
+    def fifthElementFromTheEnd[T](l: SinglyLinkedList[T]) = nthFromTheEnd(l, n = 4)
+
   }
 }
