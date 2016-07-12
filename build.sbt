@@ -1,4 +1,4 @@
-name := "exercises"
+name := "FazzBizzSeamless"
 
 version := "1.0"
 
