@@ -20,19 +20,19 @@ Multiples of several of these output each word in turn on the same line
     (ints) map
       (i =>
         i match {
-          case i if (i divisibleBy 3 && i divisibleBy 5 && i divisibleBy 7)   => " Fazz Bizz Barr "
-          case i if (i divisibleBy 3 && i divisibleBy 5)                      => " Fazz Bizz "
-          case i if (i divisibleBy 3 && i divisibleBy 7)                      => " Fazz Barr "
-          case i if (i divisibleBy 5 && i divisibleBy 7)                      => " Bizz Barr "
-          case i if i divisibleBy 3                                           => " Fazz "
-          case i if i divisibleBy 5                                           => " Bizz "
-          case i if i divisibleBy 7                                           => " Barr "
+          case i if ((i divisibleBy 3) && (i divisibleBy 5) && (i divisibleBy 7))   => " Fazz Bizz Barr "
+          case i if ((i divisibleBy 3) && (i divisibleBy 5))                      => " Fazz Bizz "
+          case i if ((i divisibleBy 3) && (i divisibleBy 7))                      => " Fazz Barr "
+          case i if ((i divisibleBy 5) && (i divisibleBy 7))                      => " Bizz Barr "
+          case i if (i divisibleBy 3)                                           => " Fazz "
+          case i if (i divisibleBy 5)                                           => " Bizz "
+          case i if (i divisibleBy 7)                                           => " Barr "
           case i                                                              => s"  $i  "
         })
   }
 
   def fazzBizzBarr(start: Int, end: Int): Seq[String] = fazzBizzBarr(start to end)
 
-  println(fazzBizzBarr(start = 1, end = 100))
+  fazzBizzBarr(start = 1, end = 105) foreach println
 
 }
